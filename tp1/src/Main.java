@@ -74,7 +74,7 @@ public class Main {
                 return min;
         }
         static int getMax(int[] tab){
-                int max = -Integer.MAX_VALUE;  // CORRIGER
+                int max = -Integer.MAX_VALUE;
                 for(int val : tab){
                         if(val > max){
                                 max = val;
@@ -88,7 +88,7 @@ public class Main {
                 int max = getMax(values);
                 for(int i = min ; i <= max ; i++){
                         System.out.print(i+" ");
-                        for(int j = 0 ; j < occurences[i] ; j++){
+                        for(int j = 0 ; j < occurences[i-min] ; j++){
                                 System.out.print(param);
                         }
                         System.out.print("\n");
@@ -102,7 +102,7 @@ public class Main {
 
                 for(int i = max_occ ; i > 0 ; i --){
                         for(int j = min ; j <= max ; j++){
-                                if(occurences[j] < i){
+                                if(occurences[j-min] < i){
                                         System.out.print("  ");
                                 }else{
                                         System.out.print(" "+param);
@@ -117,9 +117,13 @@ public class Main {
 
         }
         public static int[] getOccurences(int[] values){
-                int[] occ = new int[getMax(values)+1];
+
+                int minValue = getMin(values);
+                int maxValue = getMax(values);
+
+                int[] occ = new int[maxValue - minValue +1];
                 for(int value : values){
-                        occ[value]++;
+                        occ[value - minValue]++;
                 }
                 return occ;
         }
