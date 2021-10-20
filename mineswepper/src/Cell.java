@@ -4,11 +4,14 @@ public class Cell {
     private int col;
     private Boolean mine;
     private Boolean visible;
-    private int nbTouchineMine;
+    private int nbTouchingMine;
     //Constructeur
     public Cell(int row, int col){
         this.row = row;
         this.col = col;
+        this.visible = true;//TODO to change
+        this.mine = false;
+        this.nbTouchingMine = 0;
     }
     //Setters & Getters
 
@@ -36,12 +39,16 @@ public class Cell {
         this.visible = visible;
     }
 
-    public void setNbTouchineMine(int nbTouchineMine) {
-        this.nbTouchineMine = nbTouchineMine;
+    public void setNbTouchingMine(int nbTouchineMine) {
+        this.nbTouchingMine = nbTouchineMine;
     }
-
-    public int getNbTouchineMine() {
-        return nbTouchineMine;
+    public void NbTouchingMineplus() {
+        if(!this.isMine()){
+            this.nbTouchingMine++;
+        }
+    }
+    public int getNbTouchingMine() {
+        return nbTouchingMine;
     }
     //Methodes
 }
