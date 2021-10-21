@@ -9,7 +9,7 @@ public class Cell {
     public Cell(int row, int col){
         this.row = row;
         this.col = col;
-        this.visible = true;//TODO to change
+        this.visible = false;
         this.mine = false;
         this.nbTouchingMine = 0;
     }
