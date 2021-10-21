@@ -5,7 +5,7 @@ public class MineSweeper {
     //Attributs
     private int nbRows;
     private int nbCols;
-    private Cell[][] grid;
+    private final Cell[][] grid;
     private Boolean end_game;
 
     //Constructeur
@@ -32,14 +32,6 @@ public class MineSweeper {
 
     public void setNbRows(int nbRows) {
         this.nbRows = nbRows;
-    }
-
-    public int getNbRows() {
-        return nbRows;
-    }
-
-    public int getNbCols() {
-        return nbCols;
     }
     //Methodes
     public void print(){
@@ -151,9 +143,6 @@ public class MineSweeper {
     }
     public void unveil(int row, int col){
         this.grid[row][col].setVisible(true);
-    }
-    Boolean check_if_bombe(int x,int y){
-        return this.grid[x][y].isMine();
     }
     Boolean check_if_over(int x, int y){
         if(this.grid[x][y].isMine()){                       //si ce qu'on joue est une bombe
