@@ -161,7 +161,8 @@ public class MineSweeper {
         System.out.println("VICTOIRE");
         return true;
     }
-    int[] player_input(){
+
+    public int[] player_input(){
         int[] coo = new int[2];
         boolean check = false;
 
