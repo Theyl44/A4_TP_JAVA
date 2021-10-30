@@ -163,6 +163,7 @@ public class MineSweeper {
     }
 
     public int[] player_input(){
+        //TODO check : si l'utilisateur est ne rentre pas une case trop grand
         int[] coo = new int[2];
         boolean check = false;
 
