@@ -50,5 +50,9 @@ public class Cell {
     public int getNbTouchingMine() {
         return nbTouchingMine;
     }
+
+    public int getNbTouchingMines() {
+        return 1;
+    }
     //Methodes
 }
